@@ -159,26 +159,15 @@ def apply_custom_css():
     except ImportError:
         pass
 
-# @st.cache_data
+@st.cache_data
 def load_data():
     base_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
-    if not os.path.exists(base_dir):
-        st.error(f"Directory not found: {base_dir}")
-        return None, None, None
-    
-    files = os.listdir(base_dir)
-    st.write(f"Files in data/: {files}")
-    
     try:
         credit = pd.read_csv(os.path.join(base_dir, 'credit_risk_scores.csv'))
         fraud = pd.read_csv(os.path.join(base_dir, 'fraud_risk_scores.csv'))
         hybrid = pd.read_csv(os.path.join(base_dir, 'hybrid_customer_profiles.csv'))
         return credit, fraud, hybrid
-    except FileNotFoundError as e:
-        st.error(f"Missing file: {e}")
-        return None, None, None
-    except Exception as e:
-        st.error(f"Error loading data: {e}")
+    except Exception:
         return None, None, None
 
 def render_top_header():
