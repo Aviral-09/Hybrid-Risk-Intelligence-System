@@ -1,0 +1,18 @@
+[theme]
+base = "light"
+primaryColor = "#1F4E79"
+backgroundColor = "#FFF9E6"
+secondaryBackgroundColor = "#FFF3CC"
+textColor = "#2C2C2C"
+font = "sans serif"
+
+[server]
+headless = true
+port = 8501
+enableCORS = false
+
+[ui]
+hideSidebarNav = true
+
+[client]
+showErrorDetails = false

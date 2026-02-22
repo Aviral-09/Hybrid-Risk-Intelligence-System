@@ -1,0 +1,21 @@
+data/creditcard.csv
+data/credit_risk_train.csv
+data/cleaned_transaction_data.csv
+data/fraud_risk_scores.csv
+data/credit_risk_scores.csv
+data/hybrid_customer_profiles.csv
+data/suspicious_transactions_summary.csv
+archive (6)/
+give-me-some-credit/
+notebooks/
+tests/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+*.log
+pipeline_output.txt
+plots/
