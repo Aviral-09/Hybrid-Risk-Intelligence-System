@@ -177,6 +177,12 @@ def render_portal_home(credit_df, fraud_df, hybrid_df):
 def main():
     credit_df, fraud_df, hybrid_df = load_data()
     render_top_header()
+    
+    if credit_df is None or fraud_df is None or hybrid_df is None:
+        st.warning("Please run the data pipeline to generate risk scores before accessing the dashboard.")
+        st.info("Locally: Run 'python run_pipeline.py'. In cloud: Ensure data files are pushed to the repository.")
+        st.stop()
+        
     page_selection = st.session_state.get('current_page', "Portal Home")
     
     with st.container():
